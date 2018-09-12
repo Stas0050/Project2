@@ -21,6 +21,8 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
+    int quantity = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +33,22 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int numberOfCoffees = 2;
+        int numberOfCoffees = 1;
         display(numberOfCoffees);
-        displayPrice(numberOfCoffees * 5);
+        displayPrice(numberOfCoffees * 50);
     }
 
+    public void increment(View view) {
+        quantity = quantity + 1;
+        display (quantity);
+        displayPrice(quantity * 50);
+    }
+
+    public void decrement(View view) {
+        quantity = quantity - 1;
+        display (quantity);
+        displayPrice(quantity * 50);
+    }
     /**
      * This method displays the given quantity value on the screen.
      */
